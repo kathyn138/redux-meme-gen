@@ -3,6 +3,8 @@
     top: 10px;
     height: 200px; 
     width: 200px;
+    margin-bottom: 50px;
+    /* added margin-bot bc consecutive meme would go onto delete button otherwise */
 }
 .meme img {
     overflow: hidden;

@@ -7,7 +7,7 @@ class AddMemeForm extends React.Component {
       imageLink: '',
       topText: '',
       botText: ''
-    }
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -24,7 +24,7 @@ class AddMemeForm extends React.Component {
       imageLink: '',
       topText: '',
       botText: ''
-    })
+    });
   }
 
   render() {

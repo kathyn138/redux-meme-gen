@@ -12,11 +12,11 @@ class App extends React.Component {
   }
 
   addMeme(newMeme) {
-    this.props.dispatch({ type: "ADD", payload: newMeme })
+    this.props.dispatch({ type: "ADD", payload: newMeme });
   }
 
   deleteMeme(memeId) {
-    this.props.dispatch({ type: "DELETE", id: memeId})
+    this.props.dispatch({ type: "DELETE", id: memeId});
   }
   // id refers to action.id on rootReducer
 
@@ -32,7 +32,6 @@ class App extends React.Component {
           deleteMeme={() => this.deleteMeme(m.id)} />
         ))}
       </div>
-
     )
   }
 }
