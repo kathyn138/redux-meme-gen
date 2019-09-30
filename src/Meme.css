@@ -1,0 +1,20 @@
+.meme {
+    position: relative;
+    top: 10px;
+    height: 200px; 
+    width: 200px;
+}
+.meme img {
+    overflow: hidden;
+}
+#memeTopText {
+    position: absolute;
+    color: white;
+    left: 50%;
+}
+#memeBotText { 
+    position: absolute;
+    color: white;
+    bottom: -20px;
+    left: 50%;
+}

@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AddMemeForm from './AddMemeForm';
+import MemeDiv from './MemeDiv'
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.addMeme = this.addMeme.bind(this);
+    this.deleteMeme = this.deleteMeme.bind(this);
+  }
+
+  addMeme(newMeme) {
+    this.props.dispatch({ type: "ADD", payload: newMeme })
+  }
+
+  deleteMeme(memeId) {
+    this.props.dispatch({ type: "DELETE", id: memeId})
+  }
+  // id refers to action.id on rootReducer
+
+  render() {
+    return (
+      <div>
+        <AddMemeForm addMeme={this.addMeme}/>
+        {this.props.memes.map(m => (
+          <MemeDiv key={m.id} 
+          imageLink={m.imageLink} 
+          topText={m.topText} 
+          botText={m.botText}
+          deleteMeme={() => this.deleteMeme(m.id)} />
+        ))}
+      </div>
+
+    )
+  }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return { memes: state.memes };
+}
+
+const connectToState =
+  connect(mapStateToProps);
+
+export default connectToState(App);
