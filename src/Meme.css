@@ -8,11 +8,13 @@
     overflow: hidden;
 }
 #memeTopText {
+    font-family: 'Work Sans', sans-serif;
     position: absolute;
     color: white;
     left: 50%;
 }
 #memeBotText { 
+    font-family: 'Work Sans', sans-serif;
     position: absolute;
     color: white;
     bottom: -20px;

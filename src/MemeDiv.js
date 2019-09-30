@@ -16,9 +16,9 @@ class MemeDiv extends React.Component {
 
     return (
       <div className="meme">
-        <span id="memeTopText">{topText}</span>
+        <span id="memeTopText"><b>{topText}</b></span>
         <img src={imageLink} />
-        <span id="memeBotText">{botText}</span>
+        <span id="memeBotText"><b>{botText}</b></span>
         <button onClick={this.handleDeleteMeme}>Delete Me</button>
       </div>
     )
